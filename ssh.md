@@ -10,8 +10,21 @@ e.g.
 ```bash
 ssh dupinder@vikram-100.lan.prl.res.in
 ```
+### Use SSH with X forwarding
+```bash
+ssh -X username@clusteraddress
+```
+To test if X forwarding is working, try running the following
+```bash
+xclock 
+```
+or
+```bash
+xeyes
+```
 
-### Copy Folder from client to Cluster
+
+### Copy Folder from PC to Cluster
 ```bash
 scp -r path_to_local_file destination_path_with_username
 ```
