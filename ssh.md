@@ -10,11 +10,12 @@ e.g.
 ```bash
 ssh dupinder@vikram-100.lan.prl.res.in
 ```
-Login with X forwarding
+Login with X forwarding (For GUI)
 ```bash
 ssh -X username@clusteraddress
 ```
-To test if X forwarding is working, try running the following
+For MAC, make sure to install XQuartz.
+To test if X forwarding is working, try running the following:
 ```bash
 xclock 
 ```
@@ -28,11 +29,15 @@ xeyes
 ### SCP commands
 Copy Folder from PC to Cluster
 ```bash
-scp -r path_to_local_file destination_path_with_username
+scp -r path_to_local_directory destination_path
 ```
 e.g.
 ```bash
 scp -r /Volumes/NPDF_DS/SWARM/MAGx_LR/SAT_A/MDR_MAG_LR/ dupinder@vikram-100.lan.prl.res.in:~/Data/SWARM//SAT_A/  
+```
+copy single file from PC to Cluster
+```bash
+scp path_to_local_file destination_path
 ```
 ------------------------------------------------------------------------------------------
 
@@ -81,7 +86,6 @@ Note that -batch option is used while calling MATALB. -bathc is convenient than 
 1. implicitly sets up the -nosplash and -nodisplay options. For -r, these options have to be set explicitly.
 2. removes the startup banner
 3. ensures the MATLAB process exits (with an exit code) even if your statement throws an error
-
 
 ------------------------------------------------------------------------------------------
 
