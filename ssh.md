@@ -22,9 +22,11 @@ or
 ```bash
 xeyes
 ```
+------------------------------------------------------------------------------------------
 
 
-### Copy Folder from PC to Cluster
+### SCP commands
+Copy Folder from PC to Cluster
 ```bash
 scp -r path_to_local_file destination_path_with_username
 ```
@@ -32,25 +34,28 @@ e.g.
 ```bash
 scp -r /Volumes/NPDF_DS/SWARM/MAGx_LR/SAT_A/MDR_MAG_LR/ dupinder@vikram-100.lan.prl.res.in:~/Data/SWARM//SAT_A/  
 ```
+------------------------------------------------------------------------------------------
 
 ### Module Commands
-```bash
-module avail                 # List of available modules on cluster
-module load module_name      # Load a module 
-```
+Command | Usage
+|--|--|
+| module avail | List of available modules on cluster
+| module load module_name | Load a module 
+| module add module_name | Add a particular version of software to your environment
 
-### Job submission
+------------------------------------------------------------------------------------------
+
+
+### Submitting Jobs in batch mode using LSF 
+Submit using bsub command line
 ```bash
 bsub -J jobname -oo outfile.%J -eo errorfile.%J myprog
 ```
-
-### Running a MATLAB job
----
-Jobs are submitted using 'bsub' command. bsub submits the job to Load Sharing Facility (LSF) by running the specified command and its arguments. bsub syntax is as follows
+Submit using LSF Script
 ```bash
-bsub [options] command [arguments]
+bsub < jobfile
 ```
-An example scrpt file to submit Parallel shared memory Job
+where jobfile is a script containing the job instruction. An example script for submitting a Parallel shared memory MATALAB job is as follows
 ```bash
 #!/bin/sh
 # LSF options to bsub - start with #BSUB
@@ -69,12 +74,12 @@ An example scrpt file to submit Parallel shared memory Job
 
 # -- commands to execute -- 
 # 
-# module load matlab/R2021a         # For specific version
+module load matlab_client
 matlab -nodisplay -r filename -logfile MySharedMatlabOut
 ```
+------------------------------------------------------------------------------------------
 
 ### Basic LSF Commands
-----
 | Command            | Description |
 |---|---|
 | bjobs | Shows a list of your running jobs |
