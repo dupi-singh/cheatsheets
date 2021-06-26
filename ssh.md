@@ -10,7 +10,7 @@ e.g.
 ```bash
 ssh dupinder@vikram-100.lan.prl.res.in
 ```
-### Use SSH with X forwarding
+Login with X forwarding
 ```bash
 ssh -X username@clusteraddress
 ```
@@ -33,9 +33,10 @@ e.g.
 scp -r /Volumes/NPDF_DS/SWARM/MAGx_LR/SAT_A/MDR_MAG_LR/ dupinder@vikram-100.lan.prl.res.in:~/Data/SWARM//SAT_A/  
 ```
 
-### List of modules installed on cluster
+### Module Commands
 ```bash
-module avail
+module avail                 # List of available modules on cluster
+module load module_name      # Load a module 
 ```
 
 ### Job submission
@@ -44,6 +45,7 @@ bsub -J jobname -oo outfile.%J -eo errorfile.%J myprog
 ```
 
 ### Running a MATLAB job
+---
 Jobs are submitted using 'bsub' command. bsub submits the job to Load Sharing Facility (LSF) by running the specified command and its arguments. bsub syntax is as follows
 ```bash
 bsub [options] command [arguments]
@@ -70,5 +72,20 @@ An example scrpt file to submit Parallel shared memory Job
 # module load matlab/R2021a         # For specific version
 matlab -nodisplay -r filename -logfile MySharedMatlabOut
 ```
+
+### Basic LSF Commands
+----
+| Command            | Description |
+|---|---|
+| bjobs | Shows a list of your running jobs |
+| bjobs -l JOBID | Shows detailed information about your job (JOBID = job number) |
+| bqueues | Shows a list of available queues including jobs and slots |
+| bhosts | Displays hosts and their static and dynamic resources |
+| bkill JOBID | Kill job specified with JOBID |
+| bkill 0 | Kill all of your running jobs |
+| lsload | Displays load information for hosts |
+------------------------------------------------------------------------------------------
+
+
 
 
