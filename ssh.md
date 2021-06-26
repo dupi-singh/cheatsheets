@@ -115,6 +115,18 @@ vikram-100-stat
 ```
 ------------------------------------------------------------------------------------------
 
+### Populate .bashrc
+It is a good idea to populate the $HOME/.bashrc with neccessary stuff that you have to do every time. Every time you log into the cluster or submit a job the commands in your $HOME/.bashrc file will be executed. bashrc can be edited by directly exporting to it or using gedit:
+```bash
+gedit ~/.bashrc
+```
+Lets add the line to load matlab module
+```bash
+module load matlab-client
+```
+save file. Now every time you login into ssh, matlab module will be loaded into memory automatically. You can also set environment variables in bashrc for example add paths.
+
+------------------------------------------------------------------------------------------
 
 
 
