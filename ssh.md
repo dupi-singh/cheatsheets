@@ -10,19 +10,27 @@ e.g.
 ```bash
 ssh dupinder@vikram-100.lan.prl.res.in
 ```
-Login with X forwarding (For GUI)
+Login with X11 forwarding (For running application with GUI)
 ```bash
 ssh -X username@clusteraddress
 ```
-For MAC, make sure to install XQuartz.
-To test if X forwarding is working, try running the following:
+For MAC, make sure to install XQuartz which include X11.
+To test if X11 forwarding is working, try running the following:
 ```bash
 xclock 
 ```
-or
+You can also try the following GUI applications
+| Application | Use
+|--|--|
+| xeyes | Animated eyes that follow cursor
+| gedit | Text editor
+| nautilus | File browser
+  
+to know the display for current SSH session
 ```bash
-xeyes
+echo $DISPLAY
 ```
+
 ------------------------------------------------------------------------------------------
 
 
@@ -60,7 +68,7 @@ Submit using LSF Script
 ```bash
 bsub < jobfile
 ```
-where jobfile is a script containing the job instruction. An example script for submitting a Parallel shared memory MATALAB job is as follows
+where jobfile is a script containing the job instructions. An example of script for submitting a Parallel shared memory MATALAB job is as follows
 ```bash
 #!/bin/sh
 # LSF options to bsub - start with #BSUB
@@ -82,7 +90,7 @@ where jobfile is a script containing the job instruction. An example script for 
 module load matlab_client
 matlab -batch mfilename -logfile logfilename
 ```
-Note that -batch option is used while calling MATALB. -bathc is convenient than -r for the non-interactive jobs because 
+Note that -batch option is used while calling MATALB. -batch is convenient than -r for the non-interactive jobs because 
 1. implicitly sets up the -nosplash and -nodisplay options. For -r, these options have to be set explicitly.
 2. removes the startup banner
 3. ensures the MATLAB process exits (with an exit code) even if your statement throws an error
