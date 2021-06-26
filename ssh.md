@@ -65,8 +65,8 @@ where jobfile is a script containing the job instruction. An example script for 
 #BSUB -B                            # -- Notify me by email when execution begins --
 #BSUB -N                            # -- Notify me by email when execution ends   --
 ##BSUB -u your_email_address        # receive e-mail notifications on a non-default address
-#BSUB -o Output_%J.txt              # -- Output File --  (optional)
-#BSUB -e Error_%J.txt               # -- Error File --   (optional) 
+#BSUB -oo Output_%J.txt             # -- Output File --  (optional) %J suffix the job number with file name
+#BSUB -eo Error_%J.txt              # -- Error File --   (optional) 
 #BSUB -W 04:00                      # -- estimated wall clock time (execution time): hh:mm -- 
 #BSUB -n 24                         # -- Number of cores requested -- 
 #BSUB -R "span[hosts=1]"            # -- Specify the distribution of the cores: on a single node --
@@ -75,8 +75,14 @@ where jobfile is a script containing the job instruction. An example script for 
 # -- commands to execute -- 
 # 
 module load matlab_client
-matlab -nodisplay -r filename -logfile MySharedMatlabOut
+matlab -batch mfilename -logfile logfilename
 ```
+Note that -batch option is used while calling MATALB. -bathc is convenient than -r for the non-interactive jobs because 
+1. implicitly sets up the -nosplash and -nodisplay options. For -r, these options have to be set explicitly.
+2. removes the startup banner
+3. ensures the MATLAB process exits (with an exit code) even if your statement throws an error
+
+
 ------------------------------------------------------------------------------------------
 
 ### Basic LSF Commands
