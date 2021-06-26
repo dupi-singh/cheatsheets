@@ -91,6 +91,12 @@ matlab -nodisplay -r filename -logfile MySharedMatlabOut
 | lsload | Displays load information for hosts |
 ------------------------------------------------------------------------------------------
 
+### Current status of Cluster
+```bash
+vikram-100-stat
+```
+------------------------------------------------------------------------------------------
+
 
 
 
