@@ -149,5 +149,14 @@ save file. Now every time you login into ssh, matlab module will be loaded into 
 
 ------------------------------------------------------------------------------------------
 
+### Knowledgebase
+
+1. gedit throws error after loading matlab-client module
+```bash
+$ gedit
+gedit: symbol lookup error: /shared/matlab/r2019b-client/bin/glnxa64/libgtk-x11-2.0.so.0: undefined symbol: g_type_check_instance_is_fundamentally_a
+```
+It seems that there are environment variable paths associated with matlab-client which conflict with gedit library paths. 'purge'ing matlab-client module will revive gedit.
 
 
+------------------------------------------------------------------------------------------
