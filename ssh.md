@@ -26,7 +26,7 @@ You can also try the following GUI applications
 | gedit | Text editor
 | nautilus | File browser
   
-to know the display for current SSH session
+to know the display for current SSH session:
 ```bash
 echo $DISPLAY
 ```
@@ -54,9 +54,30 @@ Command | Usage
 |--|--|
 | module avail | List of available modules on cluster
 | module load module_name | Load a module 
-| module add module_name | Add a particular version of software to your environment
+| module add module_name | Add a particular version of software to your environment 
+| module rm module_name | Remove a particular version of software from your environment
+| module purge | Remove all software from your environment
+| module switch modulev1 modulev2 | Switch between particular versions of software
+| module show modulename | Display paths and other environment variables a module uses
 
 ------------------------------------------------------------------------------------------
+
+### Paths and environment variable associated with a software
+'module show' can be used to display the paths and environment variable associated with a software. Following example shows the paths and environment variable associated with default MATLAB on cluster
+```bash
+$ module show matlab-client
+-------------------------------------------------------------------
+/shared/modulefiles/toolkits/matlab-client:
+
+module-whatis	 adds MATLAB to your environment variables 
+prepend-path	 PATH /shared/matlab/r2019b-client/bin 
+prepend-path	 LD_LIBRARY_PATH /shared/matlab/r2019b-client/runtime/glnxa64 
+prepend-path	 LD_LIBRARY_PATH /shared/matlab/r2019b-client/bin/glnxa64 
+prepend-path	 LD_LIBRARY_PATH /shared/matlab/r2019b-client/sys/os/glnxa64 
+prepend-path	 LD_LIBRARY_PATH /shared/matlab/r2019b-client/sys/opengl/lib/glnxa64 
+-------------------------------------------------------------------
+```
+
 
 
 ### Submitting Jobs in batch mode using LSF 
@@ -116,7 +137,7 @@ vikram-100-stat
 ------------------------------------------------------------------------------------------
 
 ### Populate .bashrc
-It is a good idea to populate the $HOME/.bashrc with neccessary stuff that you have to do every time. Every time you log into the cluster or submit a job the commands in your $HOME/.bashrc file will be executed. bashrc can be edited by directly exporting to it or using gedit:
+It is a good idea to populate the $HOME/.bashrc with neccessary stuff that you have to do every time. Every time you log into the cluster or submit a job, the commands in your $HOME/.bashrc file will be executed. bashrc can be edited by directly exporting to it or using gedit:
 ```bash
 gedit ~/.bashrc
 ```
