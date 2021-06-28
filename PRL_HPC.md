@@ -2,7 +2,7 @@ Interact with HPC Cluster at PRL using SSH and SCP
 -------------------------------------------------
 
 
-### Login to Cluster
+### 1. Login to Cluster
 ```bash
 ssh username@clusteraddress
 ```
@@ -34,7 +34,7 @@ echo $DISPLAY
 ------------------------------------------------------------------------------------------
 
 
-### SCP commands
+### 2. SCP commands
 Copy Folder from PC to Cluster
 ```bash
 scp -r path_to_local_directory destination_path
@@ -49,7 +49,7 @@ scp path_to_local_file destination_path
 ```
 ------------------------------------------------------------------------------------------
 
-### Module Commands
+### 3. Module Commands
 Command | Usage
 |--|--|
 | module avail | List of available modules on cluster
@@ -62,7 +62,7 @@ Command | Usage
 
 ------------------------------------------------------------------------------------------
 
-### Paths and environment variable associated with a software
+### 4. Paths and environment variable associated with a software
 'module show' can be used to display the paths and environment variable associated with a software. Following example shows the paths and environment variable associated with default MATLAB on cluster
 ```bash
 $ module show matlab-client
@@ -80,7 +80,7 @@ prepend-path	 LD_LIBRARY_PATH /shared/matlab/r2019b-client/sys/opengl/lib/glnxa6
 
 
 
-### Submitting Jobs in batch mode using LSF 
+### 5. Submitting Jobs in batch mode using LSF 
 Submit using bsub command line
 ```bash
 bsub -J jobname -oo outfile.%J -eo errorfile.%J myprog
@@ -98,6 +98,7 @@ where jobfile is a script containing the job instructions. An example of script 
 #BSUB -R "rusage[mem=2GB]"          # -- specify that we need 2GB of memory per core/slot -- 
 #BSUB -B                            # -- Notify me by email when execution begins --
 #BSUB -N                            # -- Notify me by email when execution ends   --
+#BSUB -m "compute090"               # Run job on specific node. MATLAB license is attached on node 090
 ##BSUB -u your_email_address        # receive e-mail notifications on a non-default address
 #BSUB -oo Output_%J.txt             # -- Output File --  (optional) %J suffix the job number with file name
 #BSUB -eo Error_%J.txt              # -- Error File --   (optional) 
@@ -118,7 +119,7 @@ Note that -batch option is used while calling MATALB. -batch is convenient than 
 
 ------------------------------------------------------------------------------------------
 
-### Basic LSF Commands
+### 6. Basic LSF Commands
 | Command            | Description |
 |---|---|
 | bjobs | Shows a list of your running jobs |
@@ -130,13 +131,13 @@ Note that -batch option is used while calling MATALB. -batch is convenient than 
 | lsload | Displays load information for hosts |
 ------------------------------------------------------------------------------------------
 
-### Current status of Cluster
+### 7. Current status of Cluster
 ```bash
 vikram-100-stat
 ```
 ------------------------------------------------------------------------------------------
 
-### Populate .bashrc
+### 8. Populate .bashrc
 It is a good idea to populate the $HOME/.bashrc with neccessary stuff that you have to do every time. Every time you log into the cluster or submit a job, the commands in your $HOME/.bashrc file will be executed. bashrc can be edited by directly exporting to it or using gedit:
 ```bash
 gedit ~/.bashrc
@@ -149,7 +150,7 @@ save file. Now every time you login into ssh, matlab module will be loaded into 
 
 -------------------------------------------------------------------------------------------
 
-### Add proxy details to .bashrc
+### 9. Add proxy details to .bashrc
 Add the following lines to bashrc profile
 ```bash
 # Proxy setting
@@ -164,7 +165,7 @@ source .bashrc
 
 -------------------------------------------------------------------------------------------
 
-### Knowledgebase
+### 10. Knowledgebase
 
 1. gedit throws error after loading matlab-client module
 ```bash
