@@ -147,7 +147,22 @@ module load matlab-client
 ```
 save file. Now every time you login into ssh, matlab module will be loaded into memory automatically. You can also set environment variables in bashrc for example add paths.
 
-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+### Add proxy details to .bashrc
+Add the following lines to bashrc profile
+```bash
+# Proxy setting
+export http_proxy=dupinder:Dpndr#6858@172.16.0.1:3128
+export https_proxy=username:Dpndr#6858@172.16.0.1:3128
+export no_proxy=localhost
+```
+Proxy will take effect in next login session. If you want to force the proxy in current session, use the following command:
+```bash
+source .bashrc
+```
+
+-------------------------------------------------------------------------------------------
 
 ### Knowledgebase
 
