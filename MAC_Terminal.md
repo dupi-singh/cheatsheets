@@ -1,7 +1,7 @@
 MAC Terminal Commands
 ------------------
 
-### File Query
+### Files and directories
 
 | Command | Usage
 |--|--|
@@ -18,3 +18,16 @@ MAC Terminal Commands
 | Which gfortran | Show the gfortran path
 | gfortran --version | Version of gfortran
 | Open . | Open current folder in finder
+
+### Text Files
+| Command | Usage
+|--|--|
+cat filename | To print small text files
+less filename | a pager to print long text files
+less -FX filename | behave as cat on small files otherwise similar to 'less'
+
+
+### Tricks
+Trick | Example
+|--|--|
+make aliases to include flags with commands | alias aliasname='less -FX'
