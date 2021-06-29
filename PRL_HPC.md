@@ -89,7 +89,21 @@ Submit using LSF Script
 ```bash
 bsub < jobfile
 ```
-where jobfile is a script containing the job instructions. An example of script for submitting a Parallel shared memory MATALAB job is as follows
+where jobfile is a script containing the job instructions. Following are few example of script files for LSF:
+
+Example 1: script to run a random number generation routine
+```bash
+#!/bin/tcsh
+#BSUB -W 20
+#BSUB -n 1
+#BSUB -o out.%J
+#BSUB -e err.%J
+#BSUB -m compute096
+###module load matlab/R2019b
+matlab -nodisplay -nosplash -nodesktop -r "run('rand.m');exit;"
+```
+Example 2:
+script for submitting a Parallel shared memory MATALAB job
 ```bash
 #!/bin/sh
 # LSF options to bsub - start with #BSUB
