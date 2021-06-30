@@ -1,2 +1,2 @@
 # cheatsheets
-Various cheat sheets for day to day usage
+Various cheatsheets for day to day usage
