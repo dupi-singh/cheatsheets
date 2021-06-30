@@ -26,8 +26,16 @@ cat filename | To print small text files
 less filename | a pager to print long text files
 less -FX filename | behave as cat on small files otherwise similar to 'less'
 
+### Shell related
+| Command | Usage
+|--|--|
+$0 | Current shell
+$SHELL | Default shell
+sudo purge | Purging cache memory
+unset | Delete a variable in bash
 
 ### Tricks
 Trick | Example
 |--|--|
 make aliases to include flags with commands | alias aliasname='less -FX'
+Space around = | Not allowed in bash (A = 3 is invalid). Allowed in cs shell.
