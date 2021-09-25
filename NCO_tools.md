@@ -38,7 +38,7 @@ NCO Tools - Manipulate netCDF files from Command line
 | delete attribute “standard_name” for variable “var1”	| ncatted -a standard_name,var1,d,, filein.nc fileout.nc |
 | modify existing attribute “long_name” of character type for variable var1	| ncatted -a long_name,var1,m,c,'temperature' filein.nc fileout.nc |
 | create non-existing attribute “units” of character type for variable var1	| ncatted -a units,var1,c,c,'K' filein.nc fileout.nc |
-| To calculate new variable called KE from existing uu and vv variables |	ncap2 -F -s "KE=0.5*(uu*uu+vv*vv)" file_in.nc file_out.nc |
+| To calculate new variable called KE from existing uu and vv variables |	ncap2 -F -s "KE=0.5*(uu * uu+vv * vv)" file_in.nc file_out.nc |
 	
 	
 	
