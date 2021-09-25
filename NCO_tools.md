@@ -1,6 +1,27 @@
 NCO Tools - Manipulate netCDF files from Command line
 -----------------------------------------------------
 
+| Operator | Full Name                  |
+| -------- |:-------------------------- |
+| `ncap2` | netCDF Arithmetic Processor |
+| `ncatted` | netCDF ATTribute EDitor   |
+| `ncbo` | netCDF Binary Operator       |
+| `ncclimo` | netCDF CLIMatOlogy Generator |
+| `nces` | netCDF Ensemble Statistics   |
+| `ncecat` | netCDF Ensemble conCATenator |
+| `ncflint` | netCDF FiLe INTerpolator  |
+| `ncks` | netCDF Kitchen Sink          |
+| `ncpdq` | netCDF Permute Dimensions Quickly, Pack Data Quietly |
+| `ncra` | netCDF Record Averager       |
+| `ncrcat` | netCDF Record conCATenator |
+| `ncremap` | netCDF REMAPer          |
+| `ncrename` | netCDF RENAMEer          |
+| `ncwa` | netCDF Weighted Averager     |
+
+
+
+### Example
+
 | Usage | Command |
 |--|--|
 | Version |	ncks --version |
