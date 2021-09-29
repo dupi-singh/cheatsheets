@@ -138,6 +138,7 @@ Note that -batch option is used while calling MATALB. -batch is convenient than 
 |---|---|
 | bjobs | Shows a list of your running jobs |
 | bjobs -l JOBID | Shows detailed information about your job (JOBID = job number) |
+| bjobs -u all | Shows jobs from all the users with node info |
 | bqueues | Shows a list of available queues including jobs and slots |
 | bhosts | Displays hosts and their static and dynamic resources |
 | bkill JOBID | Kill job specified with JOBID |
