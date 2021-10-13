@@ -191,8 +191,8 @@ mh=/home/dupinder/MATLAB/SWARM/HPC_Codes/ # shortcut for Matlab home path
 Add the following lines to bashrc profile
 ```bash
 # Proxy setting
-export http_proxy=dupinder:Dpndr#6858@172.16.0.1:3128
-export https_proxy=username:Dpndr#6858@172.16.0.1:3128
+export http_proxy=username:password@172.16.0.1:3128
+export https_proxy=username:password@172.16.0.1:3128
 export no_proxy=localhost
 ```
 Proxy will take effect in next login session. If you want to force the proxy in current session, use the following command:
