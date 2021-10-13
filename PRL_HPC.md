@@ -177,8 +177,8 @@ fi
 module load matlab-client
 
 # Proxy setting
-export http_proxy=dupinder:Dpndr#6858@172.16.0.1:3128
-export https_proxy=dupinder:Dpndr#6858@172.16.0.1:3128
+export http_proxy=username:password@172.16.0.1:3128
+export https_proxy=username:password@172.16.0.1:3128
 export no_proxy=localhost
 
 # Custom Variables
