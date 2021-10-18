@@ -1,0 +1,4 @@
+LIST UNDER CONSTRUCTION
+
+1. Wget
+2. Homebrew
