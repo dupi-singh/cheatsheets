@@ -23,4 +23,4 @@
 | Negative frequencies | F(ceil(end/2)+1:end) | mirrored to +ve frequency
 
 ### Visual representation
-! [Visual representation]
+![Visual representation](images/MATLAB_FFT_bins.jpeg)
