@@ -35,4 +35,4 @@
 | Cosine Wave (y=A*cos(kx-wt))| Positive wavenumber are eastward propagating |
 | FFT wavenumber axis | Positve wavenumber for positive frequency are westward propagating |
 
-When working with Cosine representation of waves, for positive frequencies, multiply FFT wavenumber axis by -1. Or else, use the negative frquency. 
+When working with Cosine representation of waves, for positive frequencies, multiply FFT wavenumber axis by -1. Or else, use the negative frequency. 
