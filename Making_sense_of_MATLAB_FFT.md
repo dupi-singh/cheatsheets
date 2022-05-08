@@ -25,11 +25,14 @@
 ### Visual representation
 ![Visual representation](images/MATLAB_FFT_bins.jpeg)
 
-## Eastward and westward zonal wave number in 2D FFT
-| wave type | Convention |
+# Interpreting the wavenumber axis of MATLAB FFT function 
+------------------------------
+
+### Eastward and westward wavenumber in 2D FFT
+| Wave type | Convention |
 |--|--|
-| Sine Wave | Positive wavenumber are westward propagating |
-| Cosine Wave  | Positive wavenumber are eastward propagating |
-| FFT wavenumber axis | Positve wavenumber are westward propagating |
+| Sine Wave (y=A*sin(kx-wt))| Positive wavenumber are westward propagating |
+| Cosine Wave (y=A*cos(kx-wt))| Positive wavenumber are eastward propagating |
+| FFT wavenumber axis | Positve wavenumber for positive frequency are westward propagating |
 
 When working with Cosine representation of waves, for positive frequencies, multiply FFT wavenumber axis by -1. Or else, use the negative frquency. 
